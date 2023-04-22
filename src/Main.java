@@ -35,13 +35,14 @@ class TCPClient {
             fileOutputStream.close();
 
             //Print file
-            System.out.println("Received file!");
+            System.out.println("Received " + argv[1] + "/" + argv[4]);
         }
         //PUT
         else if (argv[3].equals("PUT")) {
             //Send to server
             sentence = putRequest;
             outToServer.writeBytes(sentence + '\n');
+            //String ack = inFromServer.readLine();
 
             int bytes = 0;
             File file = new File(argv[4]);
